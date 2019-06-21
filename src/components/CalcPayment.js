@@ -11,7 +11,7 @@ class Payment extends Component {
     };
   }
 
-  selectCurrency = event => {
+  electCurrency = (event) => {
     const currency = event.target.value;
     this.setState({
       selectedCurrency: currency
@@ -23,19 +23,12 @@ class Payment extends Component {
       <div className="CalcPayment">
         <h2 className="CalcPayment-label">Calculate Payment in GBP</h2>
         <div className="CalcPayment-control">
-          <select
-            onChange={this.selectCurrency}
-            defaultValue={this.state.selectedCurrency}
-          >
+          <select onChange={this.selectCurrency} defaultValue={this.state.selectedCurrency}>
             {this.props.currencies.map((currency, index) => (
               <option key={index}>{currency}</option>
             ))}
           </select>
-          <input
-            className="CalcPayment-amount"
-            type="text"
-            defaultValue="0.00"
-          />
+          <input className="CalcPayment-amount" type="text" defaultValue="0.00" />
           is worth <span className="CalcPayment-result">???</span> in GBP.
           <div className="CalcPayment-calculate">
             <Button onClick={this.calculate}>Calculate</Button>

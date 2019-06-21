@@ -10,7 +10,6 @@ class App extends Component {
     super();
     this.state = {
       currencies: currencies,
-      rates: [],
       balance: 87.43 // This is the current balance in GBP
     };
   }
